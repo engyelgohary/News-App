@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:news/home/catagories/tab_item.dart';
+import 'package:news/home/news/news_details.dart';
 import 'package:news/model/SourceResponse.dart';
 
 class  TabWidget extends StatefulWidget {
@@ -32,7 +33,8 @@ class _TabWidgetState extends State<TabWidget> {
               indicatorColor: Colors.transparent,
               isScrollable: true,
               tabs: widget.sourceList.map((source) => Tabitem(isSelected: selectedindex == widget.sourceList.indexOf(source), source:source )).toList()
-              )
+              ),
+              Expanded(child: News(source: widget.sourceList[selectedindex]))
        ],));
   }
 }
