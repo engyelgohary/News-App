@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news/home/catagories/category.dart';
 import 'package:news/home/home.dart';
 import 'package:news/mytheme.dart';
+import 'home/catagories/category_details.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,6 @@ class MyApp extends StatelessWidget {
       routes: {
         Home.routeName: (context) => Home(),
         Category.routeName: (context) => Category(),
-
       },
       theme: MyTheme.lightTheme,
     );
