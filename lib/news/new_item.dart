@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:news/model/NewResponse.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:news/mytheme.dart';
+import 'package:news/theme/mytheme.dart';
 
 class News_item extends StatelessWidget {
   News news;

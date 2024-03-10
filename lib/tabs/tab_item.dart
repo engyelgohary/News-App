@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:news/model/SourceResponse.dart';
-import 'package:news/mytheme.dart';
+import 'package:news/theme/mytheme.dart';
 
 class Tabitem extends StatelessWidget {
   Source source;

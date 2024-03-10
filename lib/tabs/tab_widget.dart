@@ -1,8 +1,8 @@
 // ignore_for_file: use_key_in_widget_constructors, must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:news/home/catagories/tab_item.dart';
-import 'package:news/home/news/news_details.dart';
+import 'package:news/tabs/tab_item.dart';
+import 'package:news/news/news_details.dart';
 import 'package:news/model/SourceResponse.dart';
 
 class  TabWidget extends StatefulWidget {
