@@ -2,11 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:news/api/api_manager.dart';
-import 'package:news/home/catagories/tab_widget.dart';
-import 'package:news/home/news/new_item.dart';
+import 'package:news/tabs/tab_widget.dart';
+import 'package:news/news/new_item.dart';
 import 'package:news/model/NewResponse.dart';
 import 'package:news/model/SourceResponse.dart';
-import 'package:news/mytheme.dart';
+import 'package:news/theme/mytheme.dart';
 
 class News extends StatefulWidget {
   Source source;
