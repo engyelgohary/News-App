@@ -34,7 +34,7 @@ class _TabWidgetState extends State<TabWidget> {
               isScrollable: true,
               tabs: widget.sourceList.map((source) => Tabitem(isSelected: selectedindex == widget.sourceList.indexOf(source), source:source )).toList()
               ),
-              Expanded(child: News(source: widget.sourceList[selectedindex]))
+              Expanded(child: News_details(source: widget.sourceList[selectedindex]))
        ],));
   }
 }

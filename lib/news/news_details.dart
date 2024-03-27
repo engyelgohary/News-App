@@ -1,26 +1,25 @@
-// ignore_for_file: use_key_in_widget_constructors
+// ignore_for_file: use_key_in_widget_constructors, camel_case_types, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:news/api/api_manager.dart';
-import 'package:news/tabs/tab_widget.dart';
 import 'package:news/news/new_item.dart';
 import 'package:news/model/NewResponse.dart';
 import 'package:news/model/SourceResponse.dart';
 import 'package:news/theme/mytheme.dart';
 
-class News extends StatefulWidget {
+class News_details extends StatefulWidget {
   Source source;
-  News({required this.source});
+  News_details({required this.source, });
 
   @override
-  State<News> createState() => _NewsState();
+  State<News_details> createState() => _News_detialsState();
 }
 
-class _NewsState extends State<News> {
+class _News_detialsState extends State<News_details> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<NewResponse?>(
-        future: ApiManger.getNewsbyId(widget.source.id??""),
+        future: ApiManger.getNewsbyId(newId: widget.source.id??"",),
          builder: (context, snapshot) {
            if(snapshot.connectionState==ConnectionState.waiting){
             return Center(
@@ -36,7 +35,7 @@ class _NewsState extends State<News> {
                 children: [
                  const Text('Smothing went Wrong'),
                   ElevatedButton(onPressed: (){
-                    ApiManger.getNewsbyId(widget.source.id??"");
+                    ApiManger.getNewsbyId(newId: widget.source.id??"",);
                     setState(() {
                       
                     });
@@ -51,7 +50,7 @@ class _NewsState extends State<News> {
                 children: [
                   Text(snapshot.data?.message ??'Smothing went Wrong'),
                   ElevatedButton(onPressed: (){
-                      ApiManger.getNewsbyId(widget.source.id??"");
+                      ApiManger.getNewsbyId(newId: widget.source.id??"");
                       setState(() {
                         
                       });

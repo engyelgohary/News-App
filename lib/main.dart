@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/home/home.dart';
 import 'package:news/theme/mytheme.dart';
-import 'catagories/category_details.dart';
 
 void main() {
   runApp(const MyApp());

@@ -12,8 +12,8 @@ class News_item extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(5),
-      padding: EdgeInsets.all(5),
+      margin: const EdgeInsets.all(5),
+      padding: const EdgeInsets.all(5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -30,7 +30,7 @@ class News_item extends StatelessWidget {
                 color: MyTheme.primaryColor,
               ),
             ),
-            errorWidget: (context, url, error) => const Icon(Icons.error),
+            errorWidget: (context, url, error) =>  Icon(Icons.error,size: 40,color:MyTheme.primaryColor,),
           ),
         ),
         Padding(

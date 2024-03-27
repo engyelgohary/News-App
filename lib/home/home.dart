@@ -6,6 +6,7 @@ import 'package:news/model/Category_DM.dart';
 import 'package:news/settings/settings.dart';
 import 'package:news/theme/mytheme.dart';
 import '../catagories/category_fragment.dart';
+import '../search/customsearchdelgate.dart';
 import 'homeDrawer.dart';
 
 class Home extends StatefulWidget {
@@ -40,6 +41,20 @@ class _HomeState extends State<Home> {
                   'News App':
                   selectedCategory!.name,
                 style: Theme.of(context).textTheme.titleLarge),
+                actions: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: InkWell(
+                      onTap: (){
+                        showSearch(context: context, 
+                        delegate: CustomSearchdelegate());
+                      },
+                      child: Icon( selectedCategory != null ?
+                        Icons.search_outlined
+                        :null,size: 30,),
+                    ),
+                  )
+                ],
               ),
               body:newSelected==HomeDrawer.settings?
               Settings()

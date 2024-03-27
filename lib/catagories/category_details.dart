@@ -10,7 +10,7 @@ import 'package:news/theme/mytheme.dart';
 class Category extends StatefulWidget {
   static String routeName = "Category";
   CategoryDm cat;
-  Category({required this.cat});
+  Category({required this.cat,});
 
   @override
   State<Category> createState() => _CategoryState();
@@ -20,7 +20,7 @@ class _CategoryState extends State<Category> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<SourceResponse?>(
-        future: ApiManger.getSources(widget.cat.id),
+        future: ApiManger.getSources(widget.cat.id,),
          builder: (context, snapshot) {
            if(snapshot.connectionState==ConnectionState.waiting){
             return Center(
@@ -36,7 +36,7 @@ class _CategoryState extends State<Category> {
                 children: [
                  const Text('Smothing went Wrong'),
                   ElevatedButton(onPressed: (){
-                    ApiManger.getSources(widget.cat.id);
+                    ApiManger.getSources(widget.cat.id,);
                     setState(() {
                       
                     });
@@ -51,7 +51,7 @@ class _CategoryState extends State<Category> {
                 children: [
                   Text(snapshot.data?.message ??'Smothing went Wrong'),
                   ElevatedButton(onPressed: (){
-                      ApiManger.getSources(widget.cat.id);
+                      ApiManger.getSources(widget.cat.id,);
                       setState(() {
                         
                       });
@@ -60,7 +60,7 @@ class _CategoryState extends State<Category> {
                );
            }
            var sourceList = snapshot.data?.sources??[];
-           return TabWidget(sourceList: sourceList);
+           return TabWidget(sourceList: sourceList,);
          },
     );
   }

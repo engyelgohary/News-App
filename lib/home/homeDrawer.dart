@@ -1,10 +1,10 @@
-// ignore_for_file: use_key_in_widget_constructors
+// ignore_for_file: use_key_in_widget_constructors, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
 import 'package:news/theme/mytheme.dart';
 
 class HomeDrawer extends StatelessWidget {
-  Function Selected;
+Function Selected;
 static int categories = 1;
 static int settings = 2;
   HomeDrawer({required this.Selected});
@@ -27,8 +27,8 @@ static int settings = 2;
             },
             child: Row(
               children: [
-                 Icon(Icons.list),
-                 SizedBox(width: 10,),
+                const Icon(Icons.list),
+                const SizedBox(width: 10,),
                 Text("Categories",style: Theme.of(context).textTheme.titleMedium,)
               ],
             ),
@@ -42,8 +42,8 @@ static int settings = 2;
             },
              child: Row(
               children: [
-                 Icon(Icons.settings),
-                 SizedBox(width: 10,),
+                const Icon(Icons.settings),
+               const  SizedBox(width: 10,),
            
                 Text("Settings",style: Theme.of(context).textTheme.titleMedium,)
               ],
