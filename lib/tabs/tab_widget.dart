@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:news/tabs/tab_item.dart';
-import 'package:news/news/news_details.dart';
+import 'package:news/news/news_widget.dart';
 import 'package:news/model/SourceResponse.dart';
 
 class  TabWidget extends StatefulWidget {
@@ -34,7 +34,7 @@ class _TabWidgetState extends State<TabWidget> {
               isScrollable: true,
               tabs: widget.sourceList.map((source) => Tabitem(isSelected: selectedindex == widget.sourceList.indexOf(source), source:source )).toList()
               ),
-              Expanded(child: News(source: widget.sourceList[selectedindex]))
+              Expanded(child: News_details(source: widget.sourceList[selectedindex]))
        ],));
   }
 }

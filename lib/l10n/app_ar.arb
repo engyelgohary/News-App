@@ -1,0 +1,20 @@
+{
+  "news": "الاخبار",
+  "setting": "الإعدادات",
+  "categories": "الفئه",
+  "pick": "اختر فئة اهتمامك",
+  "sports": "الرياضه",
+  "general": "العامه",
+  "health": "الصحه",
+  "business": "الاعمال",
+  "entertainment":"ترفيه",
+  "science": "علوم",
+  "technology": "التكنولوجيا",
+  "language": "اللغه",
+  "english": "الانجليزيه",
+  "arabic": "العربيه",
+  "appLanguage": "ar"
+
+
+
+}

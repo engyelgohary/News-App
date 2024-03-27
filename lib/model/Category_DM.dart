@@ -1,5 +1,8 @@
+
 import 'package:flutter/material.dart';
 import 'package:news/theme/mytheme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class CategoryDm {
   String id;
@@ -11,41 +14,41 @@ class CategoryDm {
       required this.name,
       required this.imgPath,
       required this.color});
-  static List<CategoryDm> getCategories() {
+  static List<CategoryDm> getCategories(BuildContext context) {
     return [
       CategoryDm(
           id: 'sports',
-          name: 'Sports',
+          name: AppLocalizations.of(context)!.sports,
           imgPath: "assets/images/ball.png",
           color: MyTheme.redColor),
       CategoryDm(
           id: 'general',
-          name: 'General',
+          name: AppLocalizations.of(context)!.general,
           imgPath: "assets/images/Politics.png",
           color: MyTheme.darkBlueColor),
       CategoryDm(
           id: 'health',
-          name: 'Health',
+          name: AppLocalizations.of(context)!.health,
           imgPath: "assets/images/health.png",
           color: MyTheme.pinkColor),
       CategoryDm(
           id: 'business',
-          name: 'Business',
+          name: AppLocalizations.of(context)!.business,
           imgPath: "assets/images/bussines.png",
           color: MyTheme.brownColor),
       CategoryDm(
           id: 'entertainment',
-          name: 'Entertainment',
+          name: AppLocalizations.of(context)!.entertainment,
           imgPath: "assets/images/environment.png",
           color: MyTheme.lightBlueColor),
       CategoryDm(
           id: 'science',
-          name: 'Science',
+          name: AppLocalizations.of(context)!.science,
           imgPath: "assets/images/science.png",
           color: MyTheme.yellowColor),
       CategoryDm(
           id: 'technology',
-          name: 'Technology',
+          name: AppLocalizations.of(context)!.technology,
           imgPath: "assets/images/environment.png",
           color: MyTheme.primaryColor),
     ];
