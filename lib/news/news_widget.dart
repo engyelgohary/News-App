@@ -66,7 +66,7 @@ class _News_detialsState extends State<News_details> {
            separatorBuilder: (context, index) {
             return Divider(
                   color:  MyTheme.primaryColor,
-                  thickness: 4,
+                  thickness: 2,
                 );
            },
            );

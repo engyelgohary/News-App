@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:news/tabs/tab_item.dart';
-import 'package:news/news/news_details.dart';
+import 'package:news/news/news_widget.dart';
 import 'package:news/model/SourceResponse.dart';
 
 class  TabWidget extends StatefulWidget {

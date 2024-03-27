@@ -62,7 +62,13 @@ class  CustomSearchdelegate extends SearchDelegate{
         }
         var articles = snapshot.data?.articles ?? [];
         return Expanded(
-          child: ListView.builder(
+          child: ListView.separated(
+            separatorBuilder: (context, index) {
+              return Divider(
+                color:  MyTheme.primaryColor,
+                thickness: 2,
+              );
+            },
             itemBuilder: (context, index) {
               var newsItem = articles[index];
               return News_item(news: newsItem);

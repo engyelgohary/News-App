@@ -8,6 +8,7 @@ import 'package:news/theme/mytheme.dart';
 import '../catagories/category_fragment.dart';
 import '../search/customsearchdelgate.dart';
 import 'homeDrawer.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Home extends StatefulWidget {
   static String routeName = "Home";
@@ -36,9 +37,10 @@ class _HomeState extends State<Home> {
               backgroundColor: Colors.transparent,
               appBar: AppBar(
                 title: Text( newSelected == HomeDrawer.settings ?
-                'Settings'
+                AppLocalizations.of(context)!.setting
                 : selectedCategory == null ?
-                  'News App':
+                AppLocalizations.of(context)!.news
+                    :
                   selectedCategory!.name,
                 style: Theme.of(context).textTheme.titleLarge),
                 actions: [

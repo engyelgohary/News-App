@@ -6,6 +6,9 @@ import 'package:news/model/Category_DM.dart';
 import 'package:news/tabs/tab_widget.dart';
 import 'package:news/model/SourceResponse.dart';
 import 'package:news/theme/mytheme.dart';
+import 'package:provider/provider.dart';
+
+import '../Provider/localprovider.dart';
 
 class Category extends StatefulWidget {
   static String routeName = "Category";
@@ -19,8 +22,9 @@ class Category extends StatefulWidget {
 class _CategoryState extends State<Category> {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     return FutureBuilder<SourceResponse?>(
-        future: ApiManger.getSources(widget.cat.id,),
+        future: ApiManger.getSources(widget.cat.id,"en"),
          builder: (context, snapshot) {
            if(snapshot.connectionState==ConnectionState.waiting){
             return Center(
@@ -36,9 +40,9 @@ class _CategoryState extends State<Category> {
                 children: [
                  const Text('Smothing went Wrong'),
                   ElevatedButton(onPressed: (){
-                    ApiManger.getSources(widget.cat.id,);
+                    ApiManger.getSources(widget.cat.id,"en");
                     setState(() {
-                      
+
                     });
                   }, child: const Text('Try Again'))
                 ],
@@ -51,9 +55,9 @@ class _CategoryState extends State<Category> {
                 children: [
                   Text(snapshot.data?.message ??'Smothing went Wrong'),
                   ElevatedButton(onPressed: (){
-                      ApiManger.getSources(widget.cat.id,);
+                      ApiManger.getSources(widget.cat.id,"en");
                       setState(() {
-                        
+
                       });
                   }, child: const Text('Try Again'))
                 ],
