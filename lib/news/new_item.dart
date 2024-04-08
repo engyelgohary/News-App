@@ -1,18 +1,16 @@
 // ignore_for_file: use_key_in_widget_constructors, camel_case_types, must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:news/model/NewResponse.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:news/theme/mytheme.dart';
-
+import 'package:timeago/timeago.dart' as timeago;
 import 'news_detials.dart';
 
 class News_item extends StatelessWidget {
   News news;
   News_item({required this.news});
 
-  DateFormat dateFormat = DateFormat('dd-MM-yyyy (HH:mm)');
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -64,7 +62,7 @@ class News_item extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              news.publishedAt!= null ? dateFormat.format(DateTime.parse(news.publishedAt!)) : "",
+              getFormat(news.publishedAt!),
               style: Theme.of(context)
                   .textTheme
                   .titleSmall!
@@ -75,5 +73,9 @@ class News_item extends StatelessWidget {
         ]),
       ),
     );
+  }
+  getFormat(String time){
+    var datetime = DateTime.parse(time);
+    return timeago.format(datetime);
   }
 }

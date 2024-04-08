@@ -11,6 +11,10 @@ class  CustomSearchdelegate extends SearchDelegate{
     return ThemeData(
       appBarTheme: AppBarTheme(
         color: MyTheme.primaryColor,
+        shape:const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(30)))
       ),
       inputDecorationTheme: const InputDecorationTheme(
         border: InputBorder.none,
@@ -23,7 +27,7 @@ class  CustomSearchdelegate extends SearchDelegate{
         onPressed: () {
           showResults(context);
         },
-        icon: const Icon(Icons.search),
+        icon: const Icon(Icons.search_outlined,size: 30,),
       ),
     ];
   }

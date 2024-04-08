@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +19,7 @@ class _BottomsheetState extends State<Bottomsheet> {
     return Container(
       color: MyTheme.whiteColor,
       height: MediaQuery.sizeOf(context).height*.15,
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -28,7 +30,7 @@ class _BottomsheetState extends State<Bottomsheet> {
               child: provider.appLanguage == ('en')
                   ? selectedlanguage(AppLocalizations.of(context)!.english)
                   : unselectedlanguage(AppLocalizations.of(context)!.english)),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           InkWell(
@@ -63,7 +65,6 @@ class _BottomsheetState extends State<Bottomsheet> {
   }
 
   Widget unselectedlanguage(String text) {
-    var provider = Provider.of<AppConfigProvider>(context);
     return Text(
       text,
       style: Theme.of(context).textTheme.titleSmall!.copyWith(

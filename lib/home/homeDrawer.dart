@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors, non_constant_identifier_names
+// ignore_for_file: use_key_in_widget_constructors, non_constant_identifier_names, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:news/theme/mytheme.dart';

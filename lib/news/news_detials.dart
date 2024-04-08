@@ -1,10 +1,12 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'dart:io';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:news/news/news_url.dart';
 import '../model/NewResponse.dart';
 import '../theme/mytheme.dart';
-import 'package:intl/intl.dart';
+import 'package:timeago/timeago.dart' as timeago;
+
 
 
 
@@ -14,7 +16,6 @@ class DetailsNews extends StatelessWidget {
 
   DetailsNews({super.key, required this.news});
 
-  DateFormat dateFormat = DateFormat('dd-MM-yyyy (HH:mm)');
 
   @override
   Widget build(BuildContext context) {
@@ -91,8 +92,7 @@ class DetailsNews extends StatelessWidget {
                   ),
                   const SizedBox(height: 10,),
                   Text(
-                    news.publishedAt != null ? dateFormat.format(
-                        DateTime.parse(news.publishedAt!)) : "",
+                    getFormat(news.publishedAt!),
                     style: Theme
                         .of(context)
                         .textTheme
@@ -110,18 +110,14 @@ class DetailsNews extends StatelessWidget {
                         ?.copyWith(color: MyTheme.blackColor),
                   ),
                   const SizedBox(height: 50,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      InkWell(
-                        onTap: () async {
-                          final url = news.url;
-                          if (url != null && await canLaunch(url)) {
-                            await launch(url);
-                          } else {
-                          }
-                        },
-                        child: Text(
+                    InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> News_URL(url: news.url!,)));
+                      },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
                           'View Full Article',
                           style: TextStyle(
                             fontSize: 14,
@@ -129,10 +125,10 @@ class DetailsNews extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                      ),
-                      Icon(Icons.arrow_right_sharp, size: 40,
-                        color: MyTheme.primaryColor,)
-                    ],
+                        Icon(Icons.arrow_right_sharp, size: 40,
+                          color: MyTheme.primaryColor,)
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -142,19 +138,9 @@ class DetailsNews extends StatelessWidget {
       );
   }
 
-  void openUrl(String url) async {
-    try {
-      await Process.run('cmd', ['/c', 'start', url]);
-    } catch (e) {
-      print('Error: $e');
-    }
+  getFormat(String time){
+    var datetime = DateTime.parse(time);
+    return timeago.format(datetime);
   }
 }
 
-// void openUrl(String url) async {
-//   try {
-//     await Process.run('cmd', ['/c', 'start', url]);
-//   } catch (e) {
-//     print('Error: $e');
-//   }
-// }

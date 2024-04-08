@@ -19,7 +19,7 @@ class _News_detialsState extends State<News_details> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<NewResponse?>(
-        future: ApiManger.getNewsbyId(newId: widget.source.id??"",),
+        future: ApiManger.getNewsbyId(newId: widget.source.id??""),
          builder: (context, snapshot) {
            if(snapshot.connectionState==ConnectionState.waiting){
             return Center(
@@ -35,7 +35,7 @@ class _News_detialsState extends State<News_details> {
                 children: [
                  const Text('Smothing went Wrong'),
                   ElevatedButton(onPressed: (){
-                    ApiManger.getNewsbyId(newId: widget.source.id??"",);
+                    ApiManger.getNewsbyId(newId: widget.source.id??"");
                     setState(() {
                       
                     });

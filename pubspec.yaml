@@ -42,6 +42,8 @@ dependencies:
   cached_network_image: ^3.3.1
   url_launcher: ^6.2.4
   provider: ^6.1.2
+  timeago: ^3.6.1
+  webview_flutter: ^4.5.0
 
 dev_dependencies:
   flutter_test:
