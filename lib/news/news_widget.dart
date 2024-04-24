@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, camel_case_types, must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:news/api/api_manager.dart';
 import 'package:news/news/new_item.dart';
 import 'package:news/model/NewResponse.dart';
@@ -9,13 +10,14 @@ import 'package:news/theme/mytheme.dart';
 
 class News_details extends StatefulWidget {
   Source source;
-  News_details({required this.source, });
+  News_details({required this.source});
 
   @override
   State<News_details> createState() => _News_detialsState();
 }
 
 class _News_detialsState extends State<News_details> {
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<NewResponse?>(
@@ -37,7 +39,7 @@ class _News_detialsState extends State<News_details> {
                   ElevatedButton(onPressed: (){
                     ApiManger.getNewsbyId(newId: widget.source.id??"");
                     setState(() {
-                      
+
                     });
                   }, child: const Text('Try Again'))
                 ],
@@ -52,7 +54,7 @@ class _News_detialsState extends State<News_details> {
                   ElevatedButton(onPressed: (){
                       ApiManger.getNewsbyId(newId: widget.source.id??"");
                       setState(() {
-                        
+
                       });
                   }, child: const Text('Try Again'))
                 ],

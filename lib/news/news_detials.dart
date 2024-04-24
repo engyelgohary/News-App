@@ -6,10 +6,6 @@ import 'package:news/news/news_url.dart';
 import '../model/NewResponse.dart';
 import '../theme/mytheme.dart';
 import 'package:timeago/timeago.dart' as timeago;
-
-
-
-
 class DetailsNews extends StatelessWidget {
 
   News news;
