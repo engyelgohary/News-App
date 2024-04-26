@@ -41,7 +41,7 @@ class _CategoryState extends State<Category> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                         const Text('Smothing went Wrong'),
+                          Text(state.errorMessage),
                           ElevatedButton(onPressed: (){
                            modelView.getSources(widget.cat.id);
                            setState(() {
