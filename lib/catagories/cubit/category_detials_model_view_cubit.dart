@@ -16,7 +16,7 @@ class CategoryDetialsModelViewCubit extends Cubit<CategoryDetialsModelViewState>
      }
      if(response.status == "ok")
      {
-       emit(SuccessState(newsList: response.sources!));
+       emit(SuccessState(sourcesList: response.sources!));
      return;
      }
     }catch(e){

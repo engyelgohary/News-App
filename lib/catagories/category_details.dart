@@ -51,7 +51,7 @@ class _CategoryState extends State<Category> {
                         ],
                        );
       } else if (state is SuccessState){
-        return TabWidget(sourceList: state.newsList,);
+        return TabWidget(sourceList: state.sourcesList,);
       }
       return Container();
       },);

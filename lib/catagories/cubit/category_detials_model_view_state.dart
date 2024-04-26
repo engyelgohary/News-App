@@ -6,8 +6,8 @@ sealed class CategoryDetialsModelViewState {}
 final class LoadingState extends CategoryDetialsModelViewState{}
 
 final class SuccessState extends CategoryDetialsModelViewState{
-  List<Source> newsList;
-  SuccessState({required this.newsList});
+  List<Source> sourcesList;
+  SuccessState({required this.sourcesList});
 }
 
 final class ErrorState extends CategoryDetialsModelViewState{
