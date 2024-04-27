@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:news/api/api_manager.dart';
-
 import '../model/NewResponse.dart';
-
 class NewsDetailsViewModel extends ChangeNotifier{
   List<News>?newsList;
   String?errorMessage;
@@ -15,7 +13,7 @@ class NewsDetailsViewModel extends ChangeNotifier{
       var response = await ApiManger.getNewsbyId(newId: newId);
       if(response!.status == 'error'){
         errorMessage = response.message;
-      } else {
+      } else{
         newsList = response.articles;
       }
     }catch(e){

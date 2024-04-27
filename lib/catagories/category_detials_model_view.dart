@@ -16,7 +16,7 @@ class CategoryDetialsModelView extends ChangeNotifier{
       var response = await ApiManger.getSources(sourceId);
       if(response!.status == 'error'){
         errorMessage = response.message;
-      } else {
+      } else if (response.status=='ok') {
         listSource = response.sources;
       }
     }catch(e){
